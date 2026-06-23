@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "content-creator-legal-risk-analyzer"
+version = "1.0.0"
+description = "Flag copyright, licensing, and rights risks in creator content before publishing."
+requires-python = ">=3.10"
+dependencies = [
+    "crawl4ai>=0.3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

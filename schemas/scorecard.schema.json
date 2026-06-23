@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Content Creator Legal Risk Scorecard",
+  "type": "array",
+  "minItems": 8,
+  "maxItems": 8,
+  "items": {
+    "type": "object",
+    "required": ["dimension", "score", "evidence", "framework"],
+    "properties": {
+      "dimension": {"type": "string", "enum": [
+        "Music/audio rights",
+        "Image/footage rights",
+        "Fair-use posture",
+        "Trademark exposure",
+        "Publicity/likeness rights",
+        "License compatibility",
+        "Platform-policy risk",
+        "Disclosure/FTC compliance"
+      ]},
+      "score": {"type": "string", "pattern": "^(A|B|C|D|F|[1-5])$"},
+      "evidence": {"type": "string", "minLength": 10},
+      "framework": {"type": "string", "minLength": 5},
+      "strengths": {"type": "array", "items": {"type": "string"}},
+      "weaknesses": {"type": "array", "items": {"type": "string"}}
+    }
+  }
+}

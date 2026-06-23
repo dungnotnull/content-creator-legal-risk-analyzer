@@ -1,0 +1,5 @@
+# Runtime
+crawl4ai>=0.3.0
+
+# Development
+pytest>=8.0
